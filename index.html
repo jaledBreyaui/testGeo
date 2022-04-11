@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="caja">
+        <p class="titulo">Test de Geografía</p>
+        <div class="opciones animate__animated animate__backInLeft hidden">
+            <div class="opciones-hijo">
+                <h3 class="pregunta"></h3>
+                <div class="preg-hijo">
+                    <input type="radio" value="a" name="hola" id="inputA">
+                    <p class="p1"></p>
+                </div>
+                <div class="preg-hijo">
+                    <input type="radio" value="b" name="hola" id="inputB">
+                    <p class="p2"></p>
+                </div>
+                <div class="preg-hijo">
+                    <input type="radio" value="c" name="hola" id="inputC">
+                    <p class="p3"></p>
+                </div>
+            </div>
+            <button id="pregunta-btn"> Siguiente pregunta </button>
+        </div>
+        <button id="btn">Comenzar</button>
+        <div class="highscore">
+            <p> Resultado más alto: <span class="hs"> </span></p>
+        </div>
+        <div class="auspiciante">
+            <p> Auspiciado por :</p>
+            <img src="./assets/Rick-And-Morty-LogoPosta.png" class="logo">
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js.js"></script>
+</body>
+
+</html>
