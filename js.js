@@ -95,10 +95,11 @@ document.querySelector(".hs").textContent = highscore;
 let padreImg = document.createElement("div");
 let imagen = document.createElement("img");
 let frase = document.createElement("h2");
-let personaje =
-    padreImg.setAttribute("class", "padreImg");
+padreImg.setAttribute("class", "padreImg");
 imagen.setAttribute("class", "animate__animated animate__backInRight");
 frase.setAttribute("class", "animate__animated animate__backInRight");
+
+
 
 for (let i = 0; i < pregunta.length; i++) {
     solucion.push(pregunta[i].sol)
@@ -131,8 +132,9 @@ let endGame = function () {
     let verificacion = document.createElement("h2");
     verificacion.setAttribute("class", "verificacion");
     verificacion.textContent = "Corrigiendo...";
-    document.querySelector(".opciones").appendChild(verificacion);
     document.querySelector(".overlay").classList.toggle("hidden");
+    document.querySelector(".opciones").appendChild(verificacion);
+
     setTimeout(() => {
         document.querySelector(".titulo").textContent = `Tu resultado: ${correctas}/${incorrectas + correctas}`;
     }, 1000);
@@ -148,6 +150,7 @@ let appender = function () {
 let puntaje = function (data) {
     setTimeout(() => {
         appender();
+
         if (correctas >= 8) {
             imagen.src = `${data[0].image}`;
             frase.textContent = (`Tu personaje Rick&Morty es  ${data[0].name}`);
@@ -183,9 +186,12 @@ let setHighScore = function () {
     }
 };
 
-let toast = function () {
+
+
+let toast = function (texto) {
     Toastify({
-        text: "Seleccioná una opción",
+
+        text: texto,
         duration: 2000,
     }).showToast();
 }
@@ -195,7 +201,7 @@ botonInicio.addEventListener("click", () => {
     document.querySelector(".overlay").classList.toggle("hidden");
     document.querySelector("#btn").classList.toggle("hidden");
     sigPregunta();
-})
+});
 
 boton.addEventListener("click", () => {
     if (document.querySelectorAll("input[name=hola]:checked").length > 0) {
@@ -205,6 +211,9 @@ boton.addEventListener("click", () => {
             resultado();
             tuPersonaje();
             setHighScore();
+            setTimeout(() => {
+                toast("Toca F5 para reintentar")
+            }, 2500);
 
         } else {
             preguntaNro++;
@@ -212,9 +221,9 @@ boton.addEventListener("click", () => {
         }
 
     } else {
-        toast();
+        toast("Seleccioná una opción");
     }
-});
+})
 
 
 
